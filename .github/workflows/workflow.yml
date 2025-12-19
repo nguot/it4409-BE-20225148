@@ -33,7 +33,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: lamdb/it4409-sample:staging
+          tags: nguot/20225148_it4409:staging
 
   deploy:
     name: Deploy to Server
