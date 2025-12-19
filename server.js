@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
-  "mongodb+srv://20225148:20225148@clusternguyen.rxwek35.mongodb.net/it4409?retryWrites=true&w=majority&appName=ClusterNguyen"
+  process.env.MONGO_URI
 )
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB error:", err));
@@ -123,4 +123,5 @@ app.delete("/api/users/:_id", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+const PORT =  process.env.PORT;
+app.listen(PORT, () => console.log("Server running on port 3000"));
